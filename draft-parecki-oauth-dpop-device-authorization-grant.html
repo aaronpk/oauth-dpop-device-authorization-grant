@@ -1223,11 +1223,9 @@ the issued tokens.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
       </h2>
 <p id="section-1-1">The OAuth 2.0 Device Authorization Grant <span>[<a href="#RFC8628" class="cite xref">RFC8628</a>]</span> provides a mechanism
 for devices that lack a browser or have constrained input capabilities
-to obtain authorization. The flow involves the device polling the token
+to obtain an OAuth <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> access token. The flow involves the device polling the token
 endpoint while the user authorizes the request on a separate, more
-capable device. Clients utilizing this flow are often public clients,
-as defined in Section 2.1 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span>, making their issued tokens
-susceptible to theft and misuse.<a href="#section-1-1" class="pilcrow">¶</a></p>
+capable device.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">OAuth 2.0 Demonstrating Proof of Possession (DPoP) <span>[<a href="#RFC9449" class="cite xref">RFC9449</a>]</span>
 introduces a mechanism for sender-constraining access and refresh
 tokens. It works by requiring the client to prove possession of a
