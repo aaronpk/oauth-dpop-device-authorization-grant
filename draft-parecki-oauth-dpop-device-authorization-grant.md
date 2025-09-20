@@ -21,13 +21,17 @@ venue:
   mail: "oauth@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/oauth/"
   github: "aaronpk/oauth-dpop-device-authorization-grant"
-  latest: "https://aaronpk.github.io/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html"
+  latest: "https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html"
 
 author:
  -
     fullname: Aaron Parecki
     organization: Okta
-    email: aaron.parecki@okta.com
+    email: aaron@parecki.com
+ -
+    fullname: Brian Campbell
+    organization: Ping Identity
+    email: bcampbell@pingidentity.com
 
 normative:
   RFC6749:
@@ -193,4 +197,15 @@ This document has no IANA actions.
 # Acknowledgments
 {:numbered="false"}
 
-TODO acknowledge.
+The authors would like to thank Emelia Smith for her reply on
+social media suggesting that this document should exist.
+
+
+# Document History
+{:numbered="false"}
+
+\[\[ To be removed from the final specification ]]
+
+-00
+
+* Initial draft
