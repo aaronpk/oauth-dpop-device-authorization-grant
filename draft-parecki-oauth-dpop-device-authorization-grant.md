@@ -58,11 +58,9 @@ the issued tokens.
 
 The OAuth 2.0 Device Authorization Grant {{RFC8628}} provides a mechanism
 for devices that lack a browser or have constrained input capabilities
-to obtain authorization. The flow involves the device polling the token
+to obtain an OAuth {{RFC6749}} access token. The flow involves the device polling the token
 endpoint while the user authorizes the request on a separate, more
-capable device. Clients utilizing this flow are often public clients,
-as defined in Section 2.1 of {{RFC6749}}, making their issued tokens
-susceptible to theft and misuse.
+capable device.
 
 OAuth 2.0 Demonstrating Proof of Possession (DPoP) {{RFC9449}}
 introduces a mechanism for sender-constraining access and refresh
