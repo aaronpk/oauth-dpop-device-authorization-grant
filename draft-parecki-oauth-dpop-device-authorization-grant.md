@@ -9,19 +9,19 @@ number:
 date:
 consensus: true
 v: 3
-area: AREA
-workgroup: OAuth WG
+area: "Security"
+workgroup: "Web Authorization Protocol"
 keyword:
  - oauth
  - device
  - dpop
 venue:
-  group: OAuth WG
-  type: Working Group
-  mail: oauth@ietf.org
-  arch: https://example.com/WG
-  github: aaronpk/oauth-dpop-device-authorization-grant
-  latest: https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/
+  group: "Web Authorization Protocol"
+  type: "Working Group"
+  mail: "oauth@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/oauth/"
+  github: "aaronpk/oauth-dpop-device-authorization-grant"
+  latest: "https://aaronpk.github.io/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html"
 
 author:
  -
