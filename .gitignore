@@ -18,7 +18,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-parecki-oauth-dpop-device-authorization-grant.xml
+draft-parecki-oauth-dpop-device-flow.xml
 package-lock.json
 report.xml
 !requirements.txt
