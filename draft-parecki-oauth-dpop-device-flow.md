@@ -3,7 +3,7 @@ title: "DPoP for the OAuth 2.0 Device Authorization Grant"
 abbrev: "DPoP for Device Authorization Grant"
 category: std
 
-docname: draft-parecki-oauth-dpop-device-authorization-grant-latest
+docname: draft-parecki-oauth-dpop-device-flow-latest
 submissiontype: IETF
 number:
 date:
@@ -20,8 +20,8 @@ venue:
   type: "Working Group"
   mail: "oauth@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/oauth/"
-  github: "aaronpk/oauth-dpop-device-authorization-grant"
-  latest: "https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html"
+  github: "aaronpk/oauth-dpop-device-flow"
+  latest: "https://drafts.aaronpk.com/oauth-dpop-device-flow/draft-parecki-oauth-dpop-device-flow.html"
 
 author:
  -
