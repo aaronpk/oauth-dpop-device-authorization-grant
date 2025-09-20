@@ -4,8 +4,9 @@
 
 Web Authorization Protocol                                    A. Parecki
 Internet-Draft                                                      Okta
-Intended status: Standards Track                       20 September 2025
-Expires: 24 March 2026
+Intended status: Standards Track                             B. Campbell
+Expires: 24 March 2026                                     Ping Identity
+                                                       20 September 2025
 
 
            DPoP for the OAuth 2.0 Device Authorization Grant
@@ -27,7 +28,7 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://aaronpk.github.io/oauth-dpop-device-authorization-grant/
+   https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/
    draft-parecki-oauth-dpop-device-authorization-grant.html.  Status
    information for this document may be found at
    https://datatracker.ietf.org/doc/draft-parecki-oauth-dpop-device-
@@ -88,7 +89,8 @@ Table of Contents
      6.1.  Normative References
      6.2.  Informative References
    Acknowledgments
-   Author's Address
+   Document History
+   Authors' Addresses
 
 1.  Introduction
 
@@ -278,10 +280,24 @@ Table of Contents
 
 Acknowledgments
 
-   TODO acknowledge.
+   The authors would like to thank Emelia Smith for her reply on social
+   media suggesting that this document should exist.
 
-Author's Address
+Document History
+
+   [[ To be removed from the final specification ]]
+
+   -00
+
+   *  Initial draft
+
+Authors' Addresses
 
    Aaron Parecki
    Okta
-   Email: aaron.parecki@okta.com
+   Email: aaron@parecki.com
+
+
+   Brian Campbell
+   Ping Identity
+   Email: bcampbell@pingidentity.com

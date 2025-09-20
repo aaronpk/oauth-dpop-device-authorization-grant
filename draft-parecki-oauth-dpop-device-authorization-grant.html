@@ -6,6 +6,7 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>DPoP for the OAuth 2.0 Device Authorization Grant</title>
 <meta content="Aaron Parecki" name="author">
+<meta content="Brian Campbell" name="author">
 <meta content="
        The OAuth 2.0 Device Authorization Grant   is an
 authorization flow for devices with limited input capabilities.
@@ -1056,7 +1057,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">September 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Parecki</td>
+<td class="left">Parecki &amp; Campbell</td>
 <td class="center">Expires 24 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1076,11 +1077,15 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
 <dd class="expires"><time datetime="2026-03-24">24 March 2026</time></dd>
-<dt class="label-authors">Author:</dt>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
       <div class="author-name">A. Parecki</div>
 <div class="org">Okta</div>
+</div>
+<div class="author">
+      <div class="author-name">B. Campbell</div>
+<div class="org">Ping Identity</div>
 </div>
 </dd>
 </dl>
@@ -1103,7 +1108,7 @@ the issued tokens.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://aaronpk.github.io/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html">https://aaronpk.github.io/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html</a></span>.
+        The latest revision of this draft can be found at <span><a href="https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html">https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/draft-parecki-oauth-dpop-device-authorization-grant.html</a></span>.
         Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-parecki-oauth-dpop-device-authorization-grant/">https://datatracker.ietf.org/doc/draft-parecki-oauth-dpop-device-authorization-grant/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
@@ -1210,7 +1215,10 @@ the issued tokens.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
             <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-document-history" class="internal xref">Document History</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1449,20 +1457,43 @@ need to protect the private key on the client device.<a href="#section-4.3-1" cl
       <h2 id="name-acknowledgments">
 <a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">The authors would like to thank Emelia Smith for her reply on
+social media suggesting that this document should exist.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="document-history">
+<section id="appendix-B">
+      <h2 id="name-document-history">
+<a href="#name-document-history" class="section-name selfRef">Document History</a>
+      </h2>
+<p id="appendix-B-1">[[ To be removed from the final specification ]]<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">-00<a href="#appendix-B-2" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-B-3.1">
+          <p id="appendix-B-3.1.1">Initial draft<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-B">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+<section id="appendix-C">
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Aaron Parecki</span></div>
 <div dir="auto" class="left"><span class="org">Okta</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:aaron.parecki@okta.com" class="email">aaron.parecki@okta.com</a>
+<a href="mailto:aaron@parecki.com" class="email">aaron@parecki.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Brian Campbell</span></div>
+<div dir="auto" class="left"><span class="org">Ping Identity</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:bcampbell@pingidentity.com" class="email">bcampbell@pingidentity.com</a>
 </div>
 </address>
 </section>
