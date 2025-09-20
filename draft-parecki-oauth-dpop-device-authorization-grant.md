@@ -3,7 +3,7 @@ title: "DPoP for the OAuth 2.0 Device Authorization Grant"
 abbrev: "DPoP for Device Authorization Grant"
 category: std
 
-docname: draft-parecki-oauth-dpop-device-authorization-grant
+docname: draft-parecki-oauth-dpop-device-authorization-grant-latest
 submissiontype: IETF
 number:
 date:
