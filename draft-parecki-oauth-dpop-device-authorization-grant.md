@@ -30,8 +30,13 @@ author:
     email: aaron.parecki@okta.com
 
 normative:
+  RFC6749:
+  RFC8628:
+  RFC9449:
+  RFC9700:
 
 informative:
+  RFC9126:
 
 ...
 
