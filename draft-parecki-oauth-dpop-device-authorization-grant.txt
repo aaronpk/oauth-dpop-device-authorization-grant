@@ -2,21 +2,21 @@
 
 
 
-OAuth WG                                                      A. Parecki
+Web Authorization Protocol                                    A. Parecki
 Internet-Draft                                                      Okta
 Intended status: Standards Track                       20 September 2025
 Expires: 24 March 2026
 
 
            DPoP for the OAuth 2.0 Device Authorization Grant
-          draft-parecki-oauth-dpop-device-authorization-grant
+       draft-parecki-oauth-dpop-device-authorization-grant-latest
 
 Abstract
 
-   The OAuth 2.0 Device Authorization Grant [[RFC8628]] is an
+   The OAuth 2.0 Device Authorization Grant [RFC8628] is an
    authorization flow for devices with limited input capabilities.
-   Demonstrating Proof of Possession (DPoP) [[RFC9449]] is a mechanism
-   to sender-constrain OAuth 2.0 tokens.  This document describes how to
+   Demonstrating Proof of Possession (DPoP) [RFC9449] is a mechanism to
+   sender-constrain OAuth 2.0 tokens.  This document describes how to
    use DPoP with the Device Authorization Grant to provide a higher
    level of security for clients.  It binds the DPoP key to the entire
    transaction, from the initial device authorization request through
@@ -27,15 +27,16 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://drafts.aaronpk.com/oauth-dpop-device-authorization-grant/.
-   Status information for this document may be found at
+   https://aaronpk.github.io/oauth-dpop-device-authorization-grant/
+   draft-parecki-oauth-dpop-device-authorization-grant.html.  Status
+   information for this document may be found at
    https://datatracker.ietf.org/doc/draft-parecki-oauth-dpop-device-
-   authorization/.
+   authorization-grant/.
 
-   Discussion of this document takes place on the OAuth WG Working Group
-   mailing list (mailto:oauth@ietf.org), which is archived at
-   https://example.com/WG.  Subscribe at
-   https://www.ietf.org/mailman/listinfo/oauth/.
+   Discussion of this document takes place on the Web Authorization
+   Protocol Working Group mailing list (mailto:oauth@ietf.org), which is
+   archived at https://mailarchive.ietf.org/arch/browse/oauth/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/oauth/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/aaronpk/oauth-dpop-device-authorization-grant.
@@ -83,28 +84,30 @@ Table of Contents
      4.2.  Client Impersonation
      4.3.  General DPoP Considerations
    5.  IANA Considerations
-   6.  Normative References
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
    Acknowledgments
    Author's Address
 
 1.  Introduction
 
-   The OAuth 2.0 Device Authorization Grant [[RFC8628]] provides a
+   The OAuth 2.0 Device Authorization Grant [RFC8628] provides a
    mechanism for devices that lack a browser or have constrained input
    capabilities to obtain authorization.  The flow involves the device
    polling the token endpoint while the user authorizes the request on a
    separate, more capable device.  Clients utilizing this flow are often
-   public clients, as defined in Section 2.1 of [[RFC6749]], making
-   their issued tokens susceptible to theft and misuse.
+   public clients, as defined in Section 2.1 of [RFC6749], making their
+   issued tokens susceptible to theft and misuse.
 
-   OAuth 2.0 Demonstrating Proof of Possession (DPoP) [[RFC9449]]
+   OAuth 2.0 Demonstrating Proof of Possession (DPoP) [RFC9449]
    introduces a mechanism for sender-constraining access and refresh
    tokens.  It works by requiring the client to prove possession of a
    cryptographic key with every request, binding the tokens to that key.
-   [[RFC9449]] explicitly details its application with Pushed
-   Authorization Requests (PAR) [[RFC9126]], a flow that, like the
-   Device Authorization Grant, begins with a direct back-channel request
-   from the client to the authorization server.
+   [RFC9449] explicitly details its application with Pushed
+   Authorization Requests (PAR) [RFC9126], a flow that, like the Device
+   Authorization Grant, begins with a direct back-channel request from
+   the client to the authorization server.
 
    This specification formally defines the mechanism of using DPoP with
    the Device Authorization Grant.  By requiring a DPoP proof at the
@@ -127,26 +130,26 @@ Table of Contents
 3.  Protocol Flow
 
    The overall Device Authorization Grant flow remains as defined in
-   [[RFC8628]], with the addition of the DPoP header and associated
+   [RFC8628], with the addition of the DPoP header and associated
    validation logic at two key steps: the device authorization request
    and the device access token (polling) request.
 
 3.1.  Device Authorization Request
 
    To initiate the flow, the client makes a POST request to the device
-   authorization endpoint as specified in Section 3.1 of [[RFC8628]].
+   authorization endpoint as specified in Section 3.1 of [RFC8628].
    When using DPoP, this request MUST include a DPoP header field
    containing a valid DPoP proof JWT as defined in Section 4 of
-   [[RFC9449]].
+   [RFC9449].
 
    The authorization server MUST validate the DPoP proof according to
-   the rules in Section 4.3 of [[RFC9449]].  If the DPoP proof is
-   invalid, the authorization server MUST return an error response, and
-   it is RECOMMENDED that this be a 400 Bad Request with an error code
-   of invalid_dpop_proof.
+   the rules in Section 4.3 of [RFC9449].  If the DPoP proof is invalid,
+   the authorization server MUST return an error response, and it is
+   RECOMMENDED that this be a 400 Bad Request with an error code of
+   invalid_dpop_proof.
 
    If the DPoP proof is valid, the authorization server proceeds as
-   defined in Section 3.2 of [[RFC8628]] by generating a device_code,
+   defined in Section 3.2 of [RFC8628] by generating a device_code,
    user_code, etc.  In addition, the authorization server MUST associate
    the public key from the jwk header of the DPoP proof with the
    generated device_code and store this association for later
@@ -163,14 +166,14 @@ Table of Contents
 3.2.  Device Access Token Request
 
    After the user authorizes the request, the client begins polling the
-   token endpoint as described in Section 3.4 of [[RFC8628]].  Each
-   access token request (polling request) using the
+   token endpoint as described in Section 3.4 of [RFC8628].  Each access
+   token request (polling request) using the
    urn:ietf:params:oauth:grant-type:device_code grant type MUST include
    a DPoP header with DPoP proof JWT.
 
    Upon receiving a token request, the authorization server MUST perform
    the following steps in addition to the processing described in
-   [[RFC8628]]:
+   [RFC8628]:
 
    *  Look up the data associated with the received device_code.
 
@@ -178,7 +181,7 @@ Table of Contents
       during the device authorization request.
 
    *  Validate the DPoP proof JWT in the DPoP header of the current
-      polling request per Section 4.3 of [[RFC9449]].
+      polling request per Section 4.3 of [RFC9449].
 
    *  Verify that the public key in the jwk header of the DPoP proof
       matches the public key associated with the device_code.
@@ -190,7 +193,7 @@ Table of Contents
    authorization server issues an access token and an optional refresh
    token.  The issued access token MUST be bound to the DPoP public key,
    and the access token response MUST include "token_type": "DPoP"`, as
-   specified in Section 5 of [[RFC9449]].
+   specified in Section 5 of [RFC9449].
 
    Any issued refresh token MUST also be bound to the same DPoP public
    key.
@@ -222,12 +225,12 @@ Table of Contents
    protects the integrity of a single authorization flow by ensuring the
    same cryptographic identity (the DPoP key pair) is used throughout.
    It is not a client authentication mechanism.  As such, the security
-   considerations for public clients in Section 5 of [[RFC8628]] and
-   [[RFC9700]] remain relevant.
+   considerations for public clients in Section 5 of [RFC8628] and
+   [RFC9700] remain relevant.
 
 4.3.  General DPoP Considerations
 
-   All security considerations from [[RFC9449]] apply, including those
+   All security considerations from [RFC9449] apply, including those
    regarding DPoP proof replay, nonce usage, signature algorithms, and
    the need to protect the private key on the client device.
 
@@ -235,16 +238,44 @@ Table of Contents
 
    This document has no IANA actions.
 
-6.  Normative References
+6.  References
+
+6.1.  Normative References
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/rfc/rfc2119>.
 
+   [RFC6749]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              RFC 6749, DOI 10.17487/RFC6749, October 2012,
+              <https://www.rfc-editor.org/rfc/rfc6749>.
+
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC8628]  Denniss, W., Bradley, J., Jones, M., and H. Tschofenig,
+              "OAuth 2.0 Device Authorization Grant", RFC 8628,
+              DOI 10.17487/RFC8628, August 2019,
+              <https://www.rfc-editor.org/rfc/rfc8628>.
+
+   [RFC9449]  Fett, D., Campbell, B., Bradley, J., Lodderstedt, T.,
+              Jones, M., and D. Waite, "OAuth 2.0 Demonstrating Proof of
+              Possession (DPoP)", RFC 9449, DOI 10.17487/RFC9449,
+              September 2023, <https://www.rfc-editor.org/rfc/rfc9449>.
+
+   [RFC9700]  Lodderstedt, T., Bradley, J., Labunets, A., and D. Fett,
+              "Best Current Practice for OAuth 2.0 Security", BCP 240,
+              RFC 9700, DOI 10.17487/RFC9700, January 2025,
+              <https://www.rfc-editor.org/rfc/rfc9700>.
+
+6.2.  Informative References
+
+   [RFC9126]  Lodderstedt, T., Campbell, B., Sakimura, N., Tonge, D.,
+              and F. Skokan, "OAuth 2.0 Pushed Authorization Requests",
+              RFC 9126, DOI 10.17487/RFC9126, September 2021,
+              <https://www.rfc-editor.org/rfc/rfc9126>.
 
 Acknowledgments
 
