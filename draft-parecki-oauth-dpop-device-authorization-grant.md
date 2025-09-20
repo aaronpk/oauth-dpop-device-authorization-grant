@@ -113,14 +113,12 @@ and store this association for later verification.
 
 For example:
 
-```
-POST /device_authorization HTTP/1.1
-Host: server.example.com
-Content-Type: application/x-www-form-urlencoded
-DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik...
+    POST /device_authorization HTTP/1.1
+    Host: server.example.com
+    Content-Type: application/x-www-form-urlencoded
+    DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2IiwiandrIjp7Imt0eSI6Ik...
 
-client_id=1406020730&scope=example_scope
-```
+    client_id=1406020730&scope=example_scope
 
 ## Device Access Token Request
 
