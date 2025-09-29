@@ -149,7 +149,8 @@ token. The issued access token MUST be bound to the DPoP public key,
 and the access token response MUST include `"token_type": "DPoP"``, as
 specified in Section 5 of {{RFC9449}}.
 
-Any issued refresh token MUST also be bound to the same DPoP public key.
+Refresh tokens issued to public clients MUST also be bound to the same
+DPoP public key, as specified in Section 5 of {{RFC9449}}.
 
 
 # Security Considerations
