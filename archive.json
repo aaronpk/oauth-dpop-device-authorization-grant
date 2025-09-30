@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-09-28T01:50:25.642921+00:00",
+  "timestamp": "2025-09-30T01:40:04.224106+00:00",
   "repo": "aaronpk/oauth-dpop-device-flow",
   "labels": [
     {
@@ -50,5 +50,32 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOPzI3P86rG1h8",
+      "title": "RT binding is only for public clients",
+      "url": "https://github.com/aaronpk/oauth-dpop-device-flow/pull/1",
+      "state": "OPEN",
+      "author": "panva",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "This is so that the document does not change general DPoP behaviours at the token endpoint as specified in Section 5 of RFC9449.",
+      "createdAt": "2025-09-29T13:37:33Z",
+      "updatedAt": "2025-09-29T13:37:33Z",
+      "baseRepository": "aaronpk/oauth-dpop-device-flow",
+      "baseRefName": "main",
+      "baseRefOid": "dd1c76d9a4410e7cd2a6855f867625655caabf30",
+      "headRepository": "panva/oauth-dpop-device-flow",
+      "headRefName": "refresh-token-optional",
+      "headRefOid": "c24e9edea918ec0435c4822ca3697467bee07fa9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
