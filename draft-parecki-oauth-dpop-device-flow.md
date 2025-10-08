@@ -38,6 +38,19 @@ normative:
   RFC8628:
   RFC9449:
   RFC9700:
+  cross-device-bcp:
+   title: "OpenID Continuous Access Evaluation Profile 1.0"
+   author:
+    - name: Pieter Kasselmann
+      org: SPIRL
+      email: pieter@spirl.com
+    - name: Daniel Fett
+      org: Authlete
+      email: mail@danielfett.de
+    - name: Filip Skokan
+      org: Okta
+      email: panva.ip@gmail.com
+  target: https://openid.net/specs/openid-caep-1_0-final.html
 
 informative:
   RFC9126:
@@ -186,6 +199,9 @@ All security considerations from {{RFC9449}} apply, including those
 regarding DPoP proof replay, nonce usage, signature algorithms, and the
 need to protect the private key on the client device.
 
+## Cross-Device Consent Phishing
+
+This specification does not prevent cross-device consent phishing attacks and should be used in conjunction with additional mitigations as described in {{cross-device-bcp}}.
 
 # IANA Considerations
 
