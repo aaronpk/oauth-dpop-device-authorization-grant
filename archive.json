@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-10-12T01:45:31.281198+00:00",
+  "timestamp": "2025-10-14T01:42:23.255203+00:00",
   "repo": "aaronpk/oauth-dpop-device-flow",
   "labels": [
     {
@@ -89,7 +89,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-10-08T21:04:53Z",
-      "updatedAt": "2025-10-08T21:04:53Z",
+      "updatedAt": "2025-10-13T08:31:12Z",
       "baseRepository": "aaronpk/oauth-dpop-device-flow",
       "baseRefName": "main",
       "baseRefOid": "dd1c76d9a4410e7cd2a6855f867625655caabf30",
@@ -101,7 +101,28 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOPzI3P87Ggucl",
+          "commit": {
+            "abbreviatedOid": "edf667a"
+          },
+          "author": "panva",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-10-13T08:31:11Z",
+          "updatedAt": "2025-10-13T08:31:12Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\n```",
+              "createdAt": "2025-10-13T08:31:12Z",
+              "updatedAt": "2025-10-13T08:31:12Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
